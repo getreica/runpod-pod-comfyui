@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TAG_NAME=1.0.0
+TAG_NAME=1.0.2
 
 # build with latest tag
 docker build -t alexgenovese/runpod-pod-comfyui:${TAG_NAME}  --platform linux/amd64 .
