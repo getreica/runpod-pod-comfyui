@@ -1,0 +1,6 @@
+.DS_Store
+venv
+.env
+runpod-volume
+simulated_uploaded
+__pycache__
