@@ -1,6 +1,10 @@
 # Swiss knife to create workflows with ComfyUI and Train models with Ostris Ai Toolkit
 This is a fork of [ComfyUI_with_Flux](https://github.com/ValyrianTech/ComfyUI_with_Flux)
 
+# Env variables: 
+
+HF_TOKEN
+
 # Improvements: 
 
 ## Models folder into /workspace/models
