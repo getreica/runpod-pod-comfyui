@@ -20,9 +20,14 @@ RUN apt-get update && \
     apt-get install build-essential -y && \
     apt-get install clang -y
 
+# Install pget https://github.com/replicate/pget
+RUN curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/latest/download/pget_$(uname -s)_$(uname -m)" && \ 
+    chmod +x /usr/local/bin/pget
+
 # Copy the 'default' configuration file to the appropriate location
 COPY default /etc/nginx/sites-available/default
 
+# Shell path for CUDA
 ENV PATH="/usr/local/cuda/bin:${PATH}"
 
 # Install pytorch
