@@ -58,24 +58,28 @@ WORKDIR /workspace
 
 EXPOSE 8188
 
+# Install PIP modules for custom nodes 
+# Layerstyle 
+RUN pip install inference-cli==0.17.0 facexlib colorama gguf blend-modes
+
+
+#
+# Change default workflow on ComfyUI startup
+# This is a hacky way to change the default workflow on startup, but it works
+# 
+COPY --chmod=644 defaultGraph.json /defaultGraph.json
+COPY --chmod=755 replaceDefaultGraph.py /replaceDefaultGraph.py
+# Run the Python script
+RUN python3 /replaceDefaultGraph.py
+
+
+
 # Install Xlabs-AI/flux-RealismLora
 RUN apt-get install -y libgl1-mesa-glx libglib2.0-0
 RUN cd /ComfyUI/custom_nodes && \
     git clone https://github.com/XLabs-AI/x-flux-comfyui.git && \
     cd x-flux-comfyui && \
     python3 setup.py
-
-# This is a hacky way to change the default workflow on startup, but it works
-COPY --chmod=644 defaultGraph.json /defaultGraph.json
-COPY --chmod=755 replaceDefaultGraph.py /replaceDefaultGraph.py
-# Run the Python script
-RUN python3 /replaceDefaultGraph.py
-
-# Add Jupyter Notebook
-RUN pip3 install jupyterlab
-EXPOSE 8888
-
-
 
 # SUPIR Upscale
 RUN cd /ComfyUI/custom_nodes && \
@@ -192,7 +196,17 @@ RUN cd /ComfyUI/custom_nodes && \
     cd ComfyUI-CogVideoXWrapper && \
     pip3 install -r requirements.txt
 
+
+#
+# Add Jupyter Notebook
+#
+RUN pip3 install jupyterlab
+EXPOSE 8888
+
+
+#
 # AI-Toolkit
+#
 RUN cd / && \
     git clone https://github.com/ostris/ai-toolkit.git && \
     cd ai-toolkit && \

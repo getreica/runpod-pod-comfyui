@@ -36,9 +36,6 @@ service nginx start
 jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.allow_origin='*' &
 echo "JupyterLab started"
 
-# Check if the flux model is present
-bash /check_files.sh
-
 # Check if there is a venv directory, if so, activate it
 if [ -d "/workspace/venv" ]; then
     echo "venv directory found, activating it"
