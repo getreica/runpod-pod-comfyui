@@ -1,4 +1,4 @@
-ARG CUDA_VERSION="12.1.1"
+ARG CUDA_VERSION="12.4"
 ARG CUDNN_VERSION="8"
 ARG UBUNTU_VERSION="22.04"
 ARG DOCKER_FROM=nvidia/cuda:$CUDA_VERSION-cudnn$CUDNN_VERSION-devel-ubuntu$UBUNTU_VERSION
@@ -31,8 +31,8 @@ COPY default /etc/nginx/sites-available/default
 ENV PATH="/usr/local/cuda/bin:${PATH}"
 
 # Install pytorch
-ARG PYTORCH="2.4.0"
-ARG CUDA="121"
+ARG PYTORCH="2.5.1"
+ARG CUDA="124"
 RUN pip3 install --no-cache-dir -U torch==$PYTORCH torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu$CUDA
 
 # Setup
@@ -60,7 +60,7 @@ EXPOSE 8188
 
 # Install PIP modules for custom nodes 
 # Layerstyle 
-RUN pip install inference-cli==0.17.0 facexlib colorama gguf blend-modes
+RUN pip install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers
 
 
 #
