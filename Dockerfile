@@ -38,16 +38,9 @@ RUN pip3 install --no-cache-dir -U torch==$PYTORCH torchvision torchaudio --extr
 # Script for run ComfyUI in Listen 
 COPY --chmod=755 start-ssh-only.sh /start.sh
 COPY --chmod=755 start-original.sh /start-original.sh
-
 # Setup environment ComfyUI and Ai Toolkit 
 COPY --chmod=755 comfyui-on-workspace.sh /comfyui-on-workspace.sh
 COPY --chmod=755 ai-toolkit-on-workspace.sh /ai-toolkit-on-workspace.sh
-
-# Download or do nothing
-RUN /comfyui-on-workspace.sh
-# Download or do nothing
-RUN /ai-toolkit-on-workspace.sh
-
 
 # Setup script of ComfyUI settings
 COPY --chmod=644 comfy.settings.json /ComfyUI/user/default/comfy.settings.json
