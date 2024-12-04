@@ -81,6 +81,18 @@ RUN cd /ComfyUI/custom_nodes && \
     cd x-flux-comfyui && \
     python3 setup.py
 
+# This is a hacky way to change the default workflow on startup, but it works
+COPY --chmod=644 defaultGraph.json /defaultGraph.json
+COPY --chmod=755 replaceDefaultGraph.py /replaceDefaultGraph.py
+# Run the Python script
+RUN python3 /replaceDefaultGraph.py
+
+# Add Jupyter Notebook
+RUN pip3 install jupyterlab
+EXPOSE 8888
+
+
+
 # SUPIR Upscale
 RUN cd /ComfyUI/custom_nodes && \
     git clone https://github.com/kijai/ComfyUI-SUPIR.git && \
@@ -196,17 +208,7 @@ RUN cd /ComfyUI/custom_nodes && \
     cd ComfyUI-CogVideoXWrapper && \
     pip3 install -r requirements.txt
 
-
-#
-# Add Jupyter Notebook
-#
-RUN pip3 install jupyterlab
-EXPOSE 8888
-
-
-#
 # AI-Toolkit
-#
 RUN cd / && \
     git clone https://github.com/ostris/ai-toolkit.git && \
     cd ai-toolkit && \
