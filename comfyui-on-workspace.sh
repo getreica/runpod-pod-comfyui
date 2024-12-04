@@ -4,16 +4,30 @@
 mkdir -p /workspace
 
 if [[ ! -d /workspace/ComfyUI ]]; then
-	# If we don't already have /workspace/ComfyUI, move it there
+	echo "----- Installing ComfyUI ------"
+	# If we don't already have /workspace/ComfyUI
+	# Download it
+	git clone https://github.com/comfyanonymous/ComfyUI.git && \
+    cd ComfyUI && \
+    pip3 install -r requirements.txt && \
+    cd custom_nodes && \
+    git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
+    git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git && \
+    cd /ComfyUI && \
+    mkdir pysssss-workflows
+
+	# Move to workspace 
 	mv /ComfyUI /workspace
+
+	# remove models
+	rm -rf /workspace/ComfyUI/models
+	ln -s /workspace/models /workspace/ComfyUI/models
+
+	# Then link /ComfyUI folder to /workspace so it's available in that familiar location as well
+	ln -s /workspace/ComfyUI /ComfyUI
+
+
 else
-	# otherwise delete the default ComfyUI folder which is always re-created on pod start from the Docker
-	rm -rf /ComfyUI
+	echo "----- No Installation required. ComfyUI is on /workspace/ComfyUI ------"
+	# otherwise do nothing
 fi
-
-# remove models
-rm -rf /workspace/ComfyUI/models
-ln -s /workspace/models /workspace/ComfyUI/models
-
-# Then link /ComfyUI folder to /workspace so it's available in that familiar location as well
-ln -s /workspace/ComfyUI /ComfyUI
