@@ -23,11 +23,20 @@ if [[ ! -d /workspace/ComfyUI ]]; then
 	rm -rf /workspace/ComfyUI/models
 	ln -s /workspace/models /workspace/ComfyUI/models
 
+	# remove, create the folder on storage and link to custom_nodes
+	mv /workspace/ComfyUI/custom_nodes /workspace/custom_nodes
+	ln -s /workspace/custom_nodes /workspace/ComfyUI/custom_nodes
+
 	# Then link /ComfyUI folder to /workspace so it's available in that familiar location as well
 	ln -s /workspace/ComfyUI /ComfyUI
 
-
 else
 	echo "----- No Installation required. ComfyUI is on /workspace/ComfyUI ------"
-	# otherwise do nothing
+	# 
+	# check if the link to custom_nodes was there
+	if [[ ! -d /workspace/custom_nodes ]]; then
+		# it doesn't exists yet so move and link
+		mv /workspace/ComfyUI/custom_nodes /workspace/custom_nodes
+		ln -s /workspace/custom_nodes /workspace/ComfyUI/custom_nodes
+	fi
 fi
