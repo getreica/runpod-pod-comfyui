@@ -44,9 +44,9 @@ COPY --chmod=755 comfyui-on-workspace.sh /comfyui-on-workspace.sh
 COPY --chmod=755 ai-toolkit-on-workspace.sh /ai-toolkit-on-workspace.sh
 
 # Download or do nothing
-RUN comfyui-on-workspace.sh
+RUN /comfyui-on-workspace.sh
 # Download or do nothing
-RUN ai-toolkit-on-workspace.sh
+RUN /ai-toolkit-on-workspace.sh
 
 
 # Setup script of ComfyUI settings
