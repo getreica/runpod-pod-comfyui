@@ -35,21 +35,19 @@ ARG PYTORCH="2.4.0"
 ARG CUDA="121"
 RUN pip3 install --no-cache-dir -U torch==$PYTORCH torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu$CUDA
 
-# Setup
+# Script for run ComfyUI in Listen 
 COPY --chmod=755 start-ssh-only.sh /start.sh
 COPY --chmod=755 start-original.sh /start-original.sh
+
+# Setup environment ComfyUI and Ai Toolkit 
 COPY --chmod=755 comfyui-on-workspace.sh /comfyui-on-workspace.sh
 COPY --chmod=755 ai-toolkit-on-workspace.sh /ai-toolkit-on-workspace.sh
 
-# Clone the git repo and install requirements in the same RUN command to ensure they are in the same layer
-RUN git clone https://github.com/comfyanonymous/ComfyUI.git && \
-    cd ComfyUI && \
-    pip3 install -r requirements.txt && \
-    cd custom_nodes && \
-    git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
-    git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git && \
-    cd /ComfyUI && \
-    mkdir pysssss-workflows
+# Download or do nothing
+RUN comfyui-on-workspace.sh
+# Download or do nothing
+RUN ai-toolkit-on-workspace.sh
+
 
 # Setup script of ComfyUI settings
 COPY --chmod=644 comfy.settings.json /ComfyUI/user/default/comfy.settings.json
