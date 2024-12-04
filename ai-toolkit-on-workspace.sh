@@ -5,14 +5,11 @@ mkdir -p /workspace
 
 if [[ ! -d /workspace/ai-toolkit ]]; then
 	echo "----- Installing Ai Toolkit ------"
-	cd / && \
+	cd /workspace && \
     git clone https://github.com/ostris/ai-toolkit.git && \
     cd ai-toolkit && \
     git submodule update --init --recursive && \
     pip3 install -r requirements.txt
-	
-	# If we don't already have /workspace/ai-toolkit, move it there
-	mv /ai-toolkit /workspace
 
 	# Then link /ai-toolkit folder to /workspace so it's available in that familiar location as well
 	ln -s /workspace/ai-toolkit /ai-toolkit
