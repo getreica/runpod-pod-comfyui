@@ -5,13 +5,14 @@ mkdir -p /workspace
 
 if [[ ! -d /workspace/ai-toolkit ]]; then
 	echo "----- Installing Ai Toolkit ------"
-	cd /workspace && \
+	cd / && \
     git clone https://github.com/ostris/ai-toolkit.git && \
     cd ai-toolkit && \
     git submodule update --init --recursive && \
     pip3 install -r requirements.txt
 
 	# Then link /ai-toolkit folder to /workspace so it's available in that familiar location as well
+	mv /ai-toolkit /workspace/ai-toolkit
 	ln -s /workspace/ai-toolkit /ai-toolkit
 
 	# Ensure we have /workspace/training_sets in all scenarios

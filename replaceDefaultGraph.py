@@ -16,7 +16,7 @@ pattern = r'const defaultGraph = \{.*?\};'
 replacement = f'const defaultGraph = {json_string};'
 
 # Search for JavaScript files in the directory
-for filename in glob.glob('/workspace/ComfyUI/web/assets/index-*.js'):
+for filename in glob.glob('/ComfyUI/web/assets/index-*.js'):
     # Load the JavaScript file with UTF-8 encoding
     with open(filename, 'r', encoding='utf-8') as js_file:
         js_data = js_file.read()

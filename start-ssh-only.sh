@@ -21,7 +21,6 @@ fi
 # Download or do nothing
 /ai-toolkit-on-workspace.sh
 
-#!/bin/bash
 if [[ -z "${HF_TOKEN}" ]] || [[ "${HF_TOKEN}" == "enter_your_huggingface_token_here" ]]
 then
     echo "HF_TOKEN is not set"
