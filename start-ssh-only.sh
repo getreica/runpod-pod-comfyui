@@ -14,9 +14,11 @@ then
 fi
 
 # Move text-generation-webui's folder to $VOLUME so models and all config will persist
+# Download or do nothing
 /comfyui-on-workspace.sh
 
 # Move ai-toolkit's folder to $VOLUME so models and all config will persist
+# Download or do nothing
 /ai-toolkit-on-workspace.sh
 
 #!/bin/bash
