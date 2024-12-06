@@ -42,4 +42,22 @@ if [[ ! -d /workspace/ComfyUI ]]; then
 else
 	echo "----- No Installation required. ComfyUI is on /workspace/ComfyUI ------"
 	# Just recreate the custom nodes only
+	echo "Creating Link on /"
+	ln -s /workspace/ComfyUI /ComfyUI
+
+	echo "Update the git to latest commit" 
+	git pull 
+
+	echo "Run pip install"
+	pip3 install -r requirements.txt
+
+	echo "Reinstall custom nodes" 
+	rm -rf /workspace/custom_nodes
+
+	# Start download nodes in /workspace/custom_nodes 
+	# Download all custom nodes in /workspace/custom_nodes
+	chmod 755 /download-custom-nodes.sh
+	/download-custom-nodes.sh
+
+
 fi
