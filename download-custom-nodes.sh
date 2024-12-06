@@ -1,6 +1,18 @@
 # Some custom nodes need this env variable
 COMFYUI_PATH=/ComfyUI
 
+# ComfyUI-Manager
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/ltdrdata/ComfyUI-Manager && \
+cd ComfyUI-Manager && \
+pip3 install -r requirements.txt
+
+# ComfyUI-Custom-Scripts
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts && \
+cd ComfyUI-Custom-Scripts && \
+pip3 install -r requirements.txt
+
 # XLAbs node
 cd /ComfyUI/custom_nodes && \
 git clone https://github.com/XLabs-AI/x-flux-comfyui.git && \
@@ -41,8 +53,9 @@ git clone https://github.com/Jordach/comfy-plasma.git
 cd /ComfyUI/custom_nodes && \
 git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git && \
 cd ComfyUI-Impact-Pack && \
+git clone https://github.com/ltdrdata/ComfyUI-Impact-Subpack impact_subpack && \
 pip3 install -r requirements.txt && \
-python3 install.py
+python3 install-manual.py
 
 # ComfyUI-Impact-controlnet_aux
 cd /ComfyUI/custom_nodes && \
@@ -88,11 +101,10 @@ cd /ComfyUI/custom_nodes && \
 git clone https://github.com/chrisgoringe/cg-image-picker.git
 
 # ComfyUI_LayerStyle
-# pip install inference-cli==0.17.0
-# cd /ComfyUI/custom_nodes && \
-#     git clone https://github.com/chflame163/ComfyUI_LayerStyle.git && \
-#     cd ComfyUI_LayerStyle && \
-#     pip3 install -r requirements.txt
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/chflame163/ComfyUI_LayerStyle.git && \
+cd ComfyUI_LayerStyle && \
+pip3 install -r requirements.txt
 
 # comfyui-reactor-node
 cd /ComfyUI/custom_nodes && \
@@ -142,14 +154,81 @@ git clone https://github.com/yichengup/Comfyui_Flux_Style_Adjust
 cd /ComfyUI/custom_nodes && \
 git clone https://github.com/TTPlanetPig/Comfyui_TTP_Toolset
 
-# ComfyUI-Manager
+# ComfyMath
 cd /ComfyUI/custom_nodes && \
-git clone https://github.com/ltdrdata/ComfyUI-Manager && \
-cd ComfyUI-Manager && \
+git clone https://github.com/evanspearman/ComfyMath && \
+cd ComfyMath && \
 pip3 install -r requirements.txt
 
-# ComfyUI-Custom-Scripts
+# ComfyUI-AdvancedLivePortrait
 cd /ComfyUI/custom_nodes && \
-git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts && \
-cd ComfyUI-Custom-Scripts && \
+git clone https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait && \
+cd ComfyUI-AdvancedLivePortrait && \
 pip3 install -r requirements.txt
+
+# ComfyUI-BiRefNet-Hugo
+# downoad the model https://huggingface.co/ZhengPeng7/BiRefNet/tree/main 
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/MoonHugo/ComfyUI-BiRefNet-Hugo && \
+cd ComfyUI-BiRefNet-Hugo && \
+pip3 install -r requirements.txt && \
+mkdir -p /workspace/models/rembg && \
+cd /workspace/models/rembg && \
+pget https://huggingface.co/ZhengPeng7/BiRefNet/resolve/main/model.safetensors ./BiRefNet.safetensors
+
+
+# ComfyUI-SAM2
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/neverbiasu/ComfyUI-SAM2 && \
+cd ComfyUI-SAM2 && \
+pip3 install -r requirements.txt
+
+# ComfyUI_IPAdapter_plus
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus
+
+# ComfyUI_Mira
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/mirabarukaso/ComfyUI_Mira 
+
+# Comfyui-In-Context-Lora-Utils
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/lrzjason/Comfyui-In-Context-Lora-Utils
+
+# Comfyui_JC2
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/TTPlanetPig/Comfyui_JC2 && \
+cd Comfyui_JC2 && \
+pip3 install -r requirements.txt
+
+#  Comfyui_Object_Migration
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/TTPlanetPig/Comfyui_Object_Migration 
+
+# ComfyUI-Image-Saver
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/farizrifqi/ComfyUI-Image-Saver && \
+cd ComfyUI-Image-Saver && \
+pip3 install -r requirements.txt
+
+# comfyui-art-venture
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/sipherxyz/comfyui-art-venture && \
+cd comfyui-art-venture && \
+pip3 install -r requirements.txt
+
+# comfyui-mixlab-nodes
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/shadowcz007/comfyui-mixlab-nodes && \
+cd comfyui-mixlab-nodes && \
+pip3 install -r requirements.txt
+
+#  comfyui-tensorops
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/un-seen/comfyui-tensorops && \
+cd comfyui-tensorops && \
+pip3 install -r requirements.txt
+
+# comfyui-various
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/jamesWalker55/comfyui-various
