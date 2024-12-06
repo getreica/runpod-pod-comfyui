@@ -109,3 +109,35 @@ cd /ComfyUI/custom_nodes && \
 git clone https://github.com/kijai/ComfyUI-CogVideoXWrapper.git && \
 cd ComfyUI-CogVideoXWrapper && \
 pip3 install -r requirements.txt
+
+# ComfyUI-Detail-Daemon
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/Jonseed/ComfyUI-Detail-Daemon && \
+cd ComfyUI-Detail-Daemon && \
+pip3 install -r requirements.txt 
+
+# GGUF
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/city96/ComfyUI-GGUF && \
+cd ComfyUI-GGUF && \
+pip3 install -r requirements.txt
+
+# PuLID-Flux-Enhanced
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/sipie800/ComfyUI-PuLID-Flux-Enhanced && \
+cd PuLID-Flux-Enhanced && \
+pip3 install -r requirements.txt
+
+# ComfyUI_AdvancedRefluxControl
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/kaibioinfo/ComfyUI_AdvancedRefluxControl && \
+cd ComfyUI_AdvancedRefluxControl && \
+pip3 install -r requirements.txt
+
+# Comfyui_Flux_Style_Adjust
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/yichengup/Comfyui_Flux_Style_Adjust 
+
+# Comfyui_TTP_Toolset
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/TTPlanetPig/Comfyui_TTP_Toolset
