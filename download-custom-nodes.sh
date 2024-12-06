@@ -141,3 +141,15 @@ git clone https://github.com/yichengup/Comfyui_Flux_Style_Adjust
 # Comfyui_TTP_Toolset
 cd /ComfyUI/custom_nodes && \
 git clone https://github.com/TTPlanetPig/Comfyui_TTP_Toolset
+
+# ComfyUI-Manager
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/ltdrdata/ComfyUI-Manager && \
+cd ComfyUI-Manager && \
+pip3 install -r requirements.txt
+
+# ComfyUI-Custom-Scripts
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts && \
+cd ComfyUI-Custom-Scripts && \
+pip3 install -r requirements.txt
