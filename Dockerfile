@@ -59,7 +59,7 @@ EXPOSE 8188
 
 # Install PIP modules for custom nodes 
 # Layerstyle 
-RUN pip3 install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers
+RUN pip3 install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers insightface
 
 # Add Jupyter Notebook
 RUN pip3 install jupyterlab
