@@ -45,7 +45,8 @@ else
 	echo "Creating Link on /"
 	ln -s /workspace/ComfyUI /ComfyUI
 
-	echo "Update the git to latest commit" 
+	echo "Update the git to latest commit"
+	cd  /workspace/ComfyUI
 	git pull 
 
 	echo "Run pip install"
@@ -53,6 +54,7 @@ else
 
 	echo "Reinstall custom nodes" 
 	rm -rf /workspace/custom_nodes
+	mkdir -p /workspace/custom_nodes
 
 	# Start download nodes in /workspace/custom_nodes 
 	# Download all custom nodes in /workspace/custom_nodes
