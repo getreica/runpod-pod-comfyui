@@ -232,3 +232,40 @@ pip3 install -r requirements.txt
 # comfyui-various
 cd /ComfyUI/custom_nodes && \
 git clone https://github.com/jamesWalker55/comfyui-various
+
+
+# ComfyUI-HunyuanVideoWrapper
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/kijai/ComfyUI-HunyuanVideoWrapper && \
+cd ComfyUI-HunyuanVideoWrapper && \
+pip3 install -r requirements.txt
+
+# ComfyUI-LTXVideo
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/Lightricks/ComfyUI-LTXVideo && \
+cd ComfyUI-LTXVideo && \
+pip3 install -r requirements.txt
+
+# ComfyUI-Redux-Prompt 
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/CY-CHENYUE/ComfyUI-Redux-Prompt && \
+cd ComfyUI-Redux-Prompt && \
+pip3 install -r requirements.txt
+
+# ComfyUI-VideoHelperSuite
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite && \
+cd ComfyUI-VideoHelperSuite && \
+pip3 install -r requirements.txt
+
+# ComfyUI_InstantID
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/cubiq/ComfyUI_InstantID && \
+cd ComfyUI_InstantID && \
+pip3 install -r requirements.txt
+
+# ComfyUI_LayerStyle_Advance
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/chflame163/ComfyUI_LayerStyle_Advance && \
+cd ComfyUI_LayerStyle_Advance && \
+pip3 install -r requirements.txt
