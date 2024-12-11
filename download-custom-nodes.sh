@@ -9,9 +9,7 @@ pip3 install -r requirements.txt
 
 # ComfyUI-Custom-Scripts
 cd /ComfyUI/custom_nodes && \
-git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts && \
-cd ComfyUI-Custom-Scripts && \
-pip3 install -r requirements.txt
+git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 
 # XLAbs node
 cd /ComfyUI/custom_nodes && \
