@@ -52,16 +52,13 @@ else
 	echo "Run pip install"
 	pip3 install -r requirements.txt
 
-	echo "Relink custom nodes" 
-	# rm -rf /workspace/custom_nodes 
-	# mkdir -p /workspace/custom_nodes
-	rm -rf /ComfyUI/custom_nodes
-	ln -s /workspace/custom_nodes /ComfyUI/custom_nodes
+	echo "Recreate custom nodes folder" 
+	rm -rf /workspace/custom_nodes 
+	mkdir -p /workspace/custom_nodes
 
 	# Start download nodes in /workspace/custom_nodes 
 	# Download all custom nodes in /workspace/custom_nodes
-	# chmod 755 /download-custom-nodes.sh
-	# /download-custom-nodes.sh
-
+	chmod 755 /download-custom-nodes.sh
+	/download-custom-nodes.sh
 
 fi
