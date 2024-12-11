@@ -269,3 +269,45 @@ cd /ComfyUI/custom_nodes && \
 git clone https://github.com/chflame163/ComfyUI_LayerStyle_Advance && \
 cd ComfyUI_LayerStyle_Advance && \
 pip3 install -r requirements.txt
+
+# Comfyui_segformer_b2_clothes
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/StartHua/Comfyui_segformer_b2_clothes && \
+cd Comfyui_segformer_b2_clothes && \
+pip3 install -r requirements.txt
+# check if folders doesn't exists and in case download weights
+if [[ ! -d /workspace/models/segformer_b2_clothes ]]; then
+    cd /workspace/models
+    git lfs install
+    git clone https://huggingface.co/mattmdjaga/segformer_b2_clothes
+fi
+
+if [[ ! -d /workspace/models/segformer_b3_fashion ]]; then
+    cd /workspace/models
+    git lfs install
+    git clone https://huggingface.co/sayeed99/segformer-b3-fashion
+fi
+
+
+# human-parser-comfyui-node
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/cozymantis/human-parser-comfyui-node && \
+cd human-parser-comfyui-node && \
+pip3 install -r requirements.txt
+# check if folders doesn't 
+if [[ ! -d /workspace/models/schp ]]; then
+    echo "------------------------------ There is no folder /workspace/models/schp !!! ------------------------------ "
+fi
+
+# ComfyUI_CatVTON_Wrapper
+cd /ComfyUI/custom_nodes && \
+git clone https://github.com/chflame163/ComfyUI_CatVTON_Wrapper && \
+cd ComfyUI_CatVTON_Wrapper && \
+pip3 install -r requirements.txt
+# check weights folder 
+if [[ ! -d /workspace/models/CatVTON ]]; then
+    echo "downloading from HF ---> change to my repository"
+    cd /workspace/models
+    git lfs install
+    git clone https://huggingface.co/camenduru/CatVTON
+fi
