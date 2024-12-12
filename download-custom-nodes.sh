@@ -284,6 +284,7 @@ if [[ ! -d /workspace/models/segformer_b3_fashion ]]; then
     cd /workspace/models
     git lfs install
     git clone https://huggingface.co/sayeed99/segformer-b3-fashion
+    mv segformer-b3-fashion segformer_b3_fashion
 fi
 
 
