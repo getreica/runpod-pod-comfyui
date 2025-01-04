@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "pod started"
+echo "POD started"
 
 if [[ $PUBLIC_KEY ]]
 then
@@ -51,5 +51,3 @@ fi
 
 # Execute the user's script
 bash /workspace/start_user.sh
-
-sleep infinity
