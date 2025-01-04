@@ -53,8 +53,8 @@ else
 	pip3 install -r requirements.txt
 
 	echo "Recreate custom nodes folder" 
-	rm -rf /workspace/custom_nodes 
-	mkdir -p /workspace/custom_nodes
+	rm -rf /workspace/ComfyUI/custom_nodes 
+	ln -s /workspace/custom_nodes /workspace/ComfyUI/custom_nodes
 
 	# Start download nodes in /workspace/custom_nodes 
 	# Download all custom nodes in /workspace/custom_nodes
