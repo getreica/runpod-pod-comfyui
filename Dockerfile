@@ -6,20 +6,27 @@ ARG DOCKER_FROM=nvidia/cuda:$CUDA_VERSION-cudnn$CUDNN_VERSION-devel-ubuntu$UBUNT
 # Base NVidia CUDA Ubuntu image
 FROM $DOCKER_FROM AS base
 
-# Install Python plus openssh, which is our minimum set of required packages.
-RUN apt-get update -y && \
-    apt-get install -y python3 python3-pip python3-venv && \
-    apt-get install -y --no-install-recommends openssh-server openssh-client git git-lfs wget vim zip unzip curl && \
-    apt-get install -y libgl1-mesa-glx libglib2.0-0 && \
-    python3 -m pip install --upgrade pip && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+# Install Python, git and other necessary tools
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    && apt-get install -y --no-install-recommends git git-lfs wget curl zip unzip aria2 ffmpeg libxext6 libxrender1 \
+    && apt-get install -y libgl1-mesa-glx libglib2.0-0 git wget libgl1 \
+    && ln -sf /usr/bin/python3.10 /usr/bin/python \
+    && ln -sf /usr/bin/pip3 /usr/bin/pip
 
-# Install nginx
-RUN apt-get update && \
-    apt-get install -y nginx && \ 
-    apt-get install build-essential -y && \
-    apt-get install clang -y
+# Clean up to reduce image size
+RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+
+# Install comfy-cli
+RUN pip install comfy-cli
+
+# Install ComfyUI
+RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.1 --nvidia --version 0.3.10
+
+FROM base AS comfyui
+
+WORKDIR /
 
 # Install pget https://github.com/replicate/pget
 RUN curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/latest/download/pget_$(uname -s)_$(uname -m)" && \ 
@@ -30,11 +37,6 @@ COPY default /etc/nginx/sites-available/default
 
 # Shell path for CUDA
 ENV PATH="/usr/local/cuda/bin:${PATH}"
-
-# Install pytorch
-ARG PYTORCH="2.4.0"
-ARG CUDA="121"
-RUN pip3 install --no-cache-dir -U torch==$PYTORCH torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu$CUDA
 
 # Script for run ComfyUI in Listen 
 COPY --chmod=755 start-ssh-only.sh /start.sh
@@ -53,9 +55,11 @@ COPY --chmod=644 comfy.settings.json /comfy.settings.json
 COPY --chmod=644 defaultGraph.json /defaultGraph.json
 COPY --chmod=755 replaceDefaultGraph.py /replaceDefaultGraph.py
 
-WORKDIR /workspace
-
 EXPOSE 8188
+
+FROM comfyui AS ai-toolkit
+
+WORKDIR /
 
 # Install PIP modules for custom nodes 
 # Layerstyle 
