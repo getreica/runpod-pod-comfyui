@@ -4,7 +4,8 @@
 # Things like installing additional custom nodes, or downloading models can be done here.
 
 # Launch the UI
-python3 /workspace/ComfyUI/main.py --listen
+cd /comfyui
+python3 main.py --listen
 
 # Keep the container running indefinitely
 sleep infinity
