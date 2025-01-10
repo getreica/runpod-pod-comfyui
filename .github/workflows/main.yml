@@ -23,7 +23,7 @@ jobs:
             dotnet: true
             haskell: true
             large-packages: true
-            docker-images: true
+            docker-images: false
             swap-storage: true
             
       - name: check repository
@@ -40,4 +40,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: alexgenovese/runpod-pod-comfyui:1.1.4
+          tags: alexgenovese/runpod-pod-comfyui:1.1.5
