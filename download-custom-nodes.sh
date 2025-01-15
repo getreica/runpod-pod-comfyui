@@ -283,6 +283,36 @@ git clone https://github.com/chflame163/ComfyUI_LayerStyle.git && \
 cd ComfyUI_LayerStyle && \
 pip3 install -r requirements.txt
 
+# Fooocus_Nodes
+cd /comfyui/custom_nodes && \
+git clone https://github.com/Seedsa/Fooocus_Nodes.git && \
+cd Fooocus_Nodes && \
+pip3 install -r requirements.txt
+
+
+# Fooocus_Nodes
+cd /comfyui/custom_nodes && \
+git clone https://github.com/Acly/comfyui-inpaint-nodes.git
+
+# Fooocus_Nodes
+cd /comfyui/custom_nodes && \
+git clone https://github.com/logtd/ComfyUI-Fluxtapoz.git && \
+cd ComfyUI-Fluxtapoz && \
+pip3 install -r requirements.txt
+
+# ComfyUI-Image-Filters
+cd /comfyui/custom_nodes && \
+git clone https://github.com/spacepxl/ComfyUI-Image-Filters.git && \
+cd ComfyUI-Image-Filters && \
+pip3 install -r requirements.txt
+
+# ComfyUI-ConDelta
+cd /comfyui/custom_nodes && \
+git clone https://github.com/envy-ai/ComfyUI-ConDelta && \
+cd ComfyUI-ConDelta && \
+pip3 install -r requirements.txt
+
+
 # Comfyui_segformer_b2_clothes
 # check if folders doesn't exists and in case download weights
 if [[ ! -d /workspace/models/segformer_b2_clothes ]]; then
@@ -302,14 +332,3 @@ if [[ ! -d /workspace/models/segformer_b3_clothes ]]; then
     git lfs install
     git clone https://huggingface.co/sayeed99/segformer_b3_clothes
 fi
-
-# Fooocus_Nodes
-cd /comfyui/custom_nodes && \
-git clone https://github.com/Seedsa/Fooocus_Nodes.git && \
-cd Fooocus_Nodes && \
-pip3 install -r requirements.txt
-
-
-# Fooocus_Nodes
-cd /comfyui/custom_nodes && \
-git clone https://github.com/Acly/comfyui-inpaint-nodes.git
