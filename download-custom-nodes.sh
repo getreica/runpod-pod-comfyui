@@ -88,12 +88,6 @@ pip3 install -r requirements.txt
 cd /comfyui/custom_nodes && \
 git clone https://github.com/chrisgoringe/cg-image-picker.git
 
-# ComfyUI_LayerStyle
-cd /comfyui/custom_nodes && \
-git clone https://github.com/chflame163/ComfyUI_LayerStyle.git && \
-cd ComfyUI_LayerStyle && \
-pip3 install -r requirements.txt
-
 # comfyui-reactor-node
 cd /comfyui/custom_nodes && \
 git clone https://github.com/Gourieff/comfyui-reactor-node.git && \
@@ -228,12 +222,6 @@ git clone https://github.com/kijai/ComfyUI-HunyuanVideoWrapper && \
 cd ComfyUI-HunyuanVideoWrapper && \
 pip3 install -r requirements.txt
 
-# ComfyUI-LTXVideo
-cd /comfyui/custom_nodes && \
-git clone https://github.com/Lightricks/ComfyUI-LTXVideo && \
-cd ComfyUI-LTXVideo && \
-pip3 install -r requirements.txt
-
 # ComfyUI-Redux-Prompt 
 cd /comfyui/custom_nodes && \
 git clone https://github.com/CY-CHENYUE/ComfyUI-Redux-Prompt && \
@@ -256,25 +244,7 @@ pip3 install -r requirements.txt
 cd /comfyui/custom_nodes && \
 git clone https://github.com/chflame163/ComfyUI_LayerStyle_Advance && \
 cd ComfyUI_LayerStyle_Advance && \
-pip3 install -r requirements.txt
-
-# Comfyui_segformer_b2_clothes
-cd /comfyui/custom_nodes && \
-git clone https://github.com/StartHua/Comfyui_segformer_b2_clothes && \
-cd Comfyui_segformer_b2_clothes && \
-pip3 install -r requirements.txt
-# check if folders doesn't exists and in case download weights
-if [[ ! -d /workspace/models/segformer_b2_clothes ]]; then
-    cd /workspace/models
-    git lfs install
-    git clone https://huggingface.co/mattmdjaga/segformer_b2_clothes
-fi
-
-if [[ ! -d /workspace/models/segformer_b3_fashion ]]; then
-    cd /workspace/models
-    git lfs install
-    git clone https://huggingface.co/sayeed99/segformer-b3-fashion
-fi
+pip3 install -r requirements.txti
 
 
 # human-parser-comfyui-node
@@ -299,3 +269,47 @@ if [[ ! -d /workspace/models/CatVTON ]]; then
     git lfs install
     git clone https://huggingface.co/camenduru/CatVTON
 fi
+
+# ComfyUI-LTXVideo
+cd /comfyui/custom_nodes && \
+git clone https://github.com/Lightricks/ComfyUI-LTXVideo && \
+cd ComfyUI-LTXVideo && \
+pip3 install -r requirements.txt
+
+
+# ComfyUI_LayerStyle
+cd /comfyui/custom_nodes && \
+git clone https://github.com/chflame163/ComfyUI_LayerStyle.git && \
+cd ComfyUI_LayerStyle && \
+pip3 install -r requirements.txt
+
+# Comfyui_segformer_b2_clothes
+# check if folders doesn't exists and in case download weights
+if [[ ! -d /workspace/models/segformer_b2_clothes ]]; then
+    cd /workspace/models
+    git lfs install
+    git clone https://huggingface.co/mattmdjaga/segformer_b2_clothes
+fi
+
+if [[ ! -d /workspace/models/segformer_b3_fashion ]]; then
+    cd /workspace/models
+    git lfs install
+    git clone https://huggingface.co/sayeed99/segformer-b3-fashion
+fi
+
+if [[ ! -d /workspace/models/segformer_b3_clothes ]]; then
+    cd /workspace/models
+    git lfs install
+    git clone https://huggingface.co/sayeed99/segformer_b3_clothes
+fi
+
+# Fooocus_Nodes
+cd /comfyui/custom_nodes && \
+git clone https://github.com/Seedsa/Fooocus_Nodes.git && \
+cd Fooocus_Nodes && \
+pip3 install -r requirements.txt
+
+
+# Fooocus_Nodes
+cd /comfyui/custom_nodes && \
+git clone https://github.com/Acly/comfyui-inpaint-nodes.git
