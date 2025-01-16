@@ -17,5 +17,5 @@ mv /comfy.settings.json /comfyui/comfy.settings.json
 python3 /replaceDefaultGraph.py
 
 # remove models
-rm -rf /workspace/ComfyUI/models
+rm -rf /workspace/comfyui/models
 ln -s /workspace/models /workspace/comfyui/models
