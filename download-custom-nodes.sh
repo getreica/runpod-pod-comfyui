@@ -312,6 +312,48 @@ git clone https://github.com/envy-ai/ComfyUI-ConDelta && \
 cd ComfyUI-ConDelta && \
 pip3 install -r requirements.txt
 
+# ComfyUI-KYNode
+cd /comfyui/custom_nodes && \
+git clone https://github.com/yorkane/ComfyUI-KYNode && \
+cd ComfyUI-KYNode && \
+pip3 install -r requirements.txt
+
+# efficiency-nodes-comfyui
+cd /comfyui/custom_nodes && \
+git clone https://github.com/jags111/efficiency-nodes-comfyui && \
+cd efficiency-nodes-comfyui && \
+pip3 install -r requirements.txt
+
+# ComfyUI-TeaCache
+cd /comfyui/custom_nodes && \
+git clone https://github.com/welltop-cn/ComfyUI-TeaCache && \
+cd ComfyUI-TeaCache && \
+pip3 install -r requirements.txt
+
+# ComfyUI-TeaCacheHunyuanVideo
+cd /comfyui/custom_nodes && \
+git clone https://github.com/facok/ComfyUI-TeaCacheHunyuanVideo && \
+cd ComfyUI-TeaCacheHunyuanVideo && \
+pip3 install -r requirements.txt
+
+# Comfy-WaveSpeed
+cd /comfyui/custom_nodes && \
+git clone https://github.com/chengzeyi/Comfy-WaveSpeed && \
+cd Comfy-WaveSpeed && \
+pip3 install -r requirements.txt
+
+# ComfyUI-DepthAnythingV2
+cd /comfyui/custom_nodes && \
+git clone https://github.com/kijai/ComfyUI-DepthAnythingV2 && \
+cd ComfyUI-DepthAnythingV2 && \
+pip3 install -r requirements.txt
+
+# Comfyui_segformer_b2_clothes
+cd /comfyui/custom_nodes && \
+git clone https://github.com/StartHua/Comfyui_segformer_b2_clothes && \
+cd Comfyui_segformer_b2_clothes && \
+pip3 install -r requirements.txt
+
 
 # Comfyui_segformer_b2_clothes
 # check if folders doesn't exists and in case download weights
