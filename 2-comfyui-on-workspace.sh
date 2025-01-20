@@ -8,8 +8,8 @@ cd /comfyui
 
 # remove models
 echo "------- Linking /workspace/comfyui/models folder into Comfyui -------"
-rm -rf /workspace/comfyui/models
-ln -s /workspace/models /workspace/comfyui/models
+rm -rf /comfyui/models
+ln -s /workspace/models /workspace/comfyui/
 
 echo "------- Installing custom scripts -------"
 comfy node install https://github.com/pythongosssss/ComfyUI-Custom-Scripts
