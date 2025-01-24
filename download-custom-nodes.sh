@@ -342,6 +342,12 @@ git clone https://github.com/chengzeyi/Comfy-WaveSpeed && \
 cd Comfy-WaveSpeed && \
 pip3 install -r requirements.txt
 
+# comfyui_segment_anything
+cd /comfyui/custom_nodes && \
+git clone ttps://github.com/storyicon/comfyui_segment_anything && \
+cd comfyui_segment_anything && \
+pip3 install -r requirements.txt
+
 # ComfyUI-DepthAnythingV2
 cd /comfyui/custom_nodes && \
 git clone https://github.com/kijai/ComfyUI-DepthAnythingV2 && \
@@ -353,6 +359,37 @@ cd /comfyui/custom_nodes && \
 git clone https://github.com/StartHua/Comfyui_segformer_b2_clothes && \
 cd Comfyui_segformer_b2_clothes && \
 pip3 install -r requirements.txt
+
+# ComfyUI_SLK_joy_caption_two
+cd /comfyui/custom_nodes && \
+git clone https://github.com/EvilBT/ComfyUI_SLK_joy_caption_two && \
+cd ComfyUI_SLK_joy_caption_two && \
+pip3 install -r requirements.txt
+
+# ComfyUI-IPAdapter-Flux
+cd /comfyui/custom_nodes && \
+git clone https://github.com/Shakker-Labs/ComfyUI-IPAdapter-Flux && \
+cd ComfyUI-IPAdapter-Flux && \
+pip3 install -r requirements.txt
+
+# ComfyUI_Florence2SAM2
+cd /comfyui/custom_nodes && \
+git clone https://github.com/rdancer/ComfyUI_Florence2SAM2 && \
+cd ComfyUI_Florence2SAM2 && \
+pip3 install -r requirements.txt
+
+# ComfyUI-ReActor
+cd /comfyui/custom_nodes && \
+git clone https://github.com/Gourieff/ComfyUI-ReActor && \
+cd ComfyUI-ReActor && \
+pip3 install -r requirements.txt
+
+# ComfyUI-IPAdapter-Flux
+cd /comfyui/custom_nodes && \
+git clone https://github.com/Shakker-Labs/ComfyUI-IPAdapter-Flux && \
+cd ComfyUI-IPAdapter-Flux && \
+pip3 install -r requirements.txt
+
 
 
 # Comfyui_segformer_b2_clothes
