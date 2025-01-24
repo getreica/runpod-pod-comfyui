@@ -378,6 +378,12 @@ git clone https://github.com/rdancer/ComfyUI_Florence2SAM2 && \
 cd ComfyUI_Florence2SAM2 && \
 pip3 install -r requirements.txt
 
+# ComfyUI-InpaintEasy
+cd /comfyui/custom_nodes && \
+git clone https://github.com/CY-CHENYUE/ComfyUI-InpaintEasy && \
+cd ComfyUI-InpaintEasy && \
+pip3 install -r requirements.txt
+
 # ComfyUI-ReActor
 cd /comfyui/custom_nodes && \
 git clone https://github.com/Gourieff/ComfyUI-ReActor && \
