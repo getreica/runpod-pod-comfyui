@@ -396,6 +396,17 @@ git clone https://github.com/Shakker-Labs/ComfyUI-IPAdapter-Flux && \
 cd ComfyUI-IPAdapter-Flux && \
 pip3 install -r requirements.txt
 
+# ComfyUI_ExtraModels
+cd /comfyui/custom_nodes && \
+git clone https://github.com/city96/ComfyUI_ExtraModels && \
+cd ComfyUI_ExtraModels && \
+pip3 install -r requirements.txt
+
+# ComfyUI-Adaptive-Guidance
+cd /comfyui/custom_nodes && \
+git clone https://github.com/asagi4/ComfyUI-Adaptive-Guidance && \
+cd ComfyUI-Adaptive-Guidance && \
+pip3 install -r requirements.txt
 
 
 # Comfyui_segformer_b2_clothes
