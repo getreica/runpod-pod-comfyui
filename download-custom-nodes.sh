@@ -344,7 +344,7 @@ pip3 install -r requirements.txt
 
 # comfyui_segment_anything
 cd /comfyui/custom_nodes && \
-git clone ttps://github.com/storyicon/comfyui_segment_anything && \
+git clone https://github.com/storyicon/comfyui_segment_anything && \
 cd comfyui_segment_anything && \
 pip3 install -r requirements.txt
 
