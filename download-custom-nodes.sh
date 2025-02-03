@@ -408,6 +408,35 @@ git clone https://github.com/asagi4/ComfyUI-Adaptive-Guidance && \
 cd ComfyUI-Adaptive-Guidance && \
 pip3 install -r requirements.txt
 
+# BEN2_ComfyUI
+cd /comfyui/custom_nodes && \
+git clone https://github.com/PramaLLC/BEN2_ComfyUI && \
+cd BEN2_ComfyUI && \
+pip3 install -r requirements.txt
+
+# ComfyUI-Impact-Subpack
+cd /comfyui/custom_nodes && \
+git clone https://github.com/ltdrdata/ComfyUI-Impact-Subpack && \
+cd ComfyUI-Impact-Subpack && \
+pip3 install -r requirements.txt
+
+# ComfyUI-mxToolkit
+cd /comfyui/custom_nodes && \
+git clone https://github.com/Smirnov75/ComfyUI-mxToolkit && \
+cd ComfyUI-mxToolkit && \
+pip3 install -r requirements.txt
+
+# comfyui-tooling-nodes
+cd /comfyui/custom_nodes && \
+git clone https://github.com/Acly/comfyui-tooling-nodes && \
+cd comfyui-tooling-nodes && \
+pip3 install -r requirements.txt
+
+# ComfyUI_Patches_ll
+cd /comfyui/custom_nodes && \
+git clone https://github.com/lldacing/ComfyUI_Patches_ll && \
+cd ComfyUI_Patches_ll && \
+pip3 install -r requirements.txt
 
 # Comfyui_segformer_b2_clothes
 # check if folders doesn't exists and in case download weights
