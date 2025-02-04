@@ -446,12 +446,6 @@ if [[ ! -d /workspace/models/segformer_b2_clothes ]]; then
     git clone https://huggingface.co/mattmdjaga/segformer_b2_clothes
 fi
 
-if [[ ! -d /workspace/models/segformer_b3_fashion ]]; then
-    cd /workspace/models
-    git lfs install
-    git clone https://huggingface.co/sayeed99/segformer-b3-fashion
-fi
-
 if [[ ! -d /workspace/models/segformer_b3_clothes ]]; then
     cd /workspace/models
     git lfs install
