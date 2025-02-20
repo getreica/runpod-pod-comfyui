@@ -18,7 +18,7 @@ comfy node install https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 # Download all custom nodes in /workspace/custom_nodes
 echo "------- Installing all nodes -------"
 chmod 755 /4-download-custom-nodes.sh
-/download-custom-nodes.sh
+/4-download-custom-nodes.sh
 
 # Update default settings
 echo "------- Update Comfyui Settings -------"
