@@ -88,12 +88,6 @@ pip3 install -r requirements.txt
 cd /comfyui/custom_nodes && \
 git clone https://github.com/chrisgoringe/cg-image-picker.git
 
-# comfyui-reactor-node
-cd /comfyui/custom_nodes && \
-git clone https://github.com/Gourieff/comfyui-reactor-node.git && \
-cd comfyui-reactor-node && \
-pip3 install -r requirements.txt
-
 # cg-use-everywhere
 cd /comfyui/custom_nodes && \
 git clone https://github.com/chrisgoringe/cg-use-everywhere.git
@@ -436,6 +430,12 @@ pip3 install -r requirements.txt
 cd /comfyui/custom_nodes && \
 git clone https://github.com/lldacing/ComfyUI_Patches_ll && \
 cd ComfyUI_Patches_ll && \
+pip3 install -r requirements.txt
+
+# ComfyUI_InvSR
+cd /comfyui/custom_nodes && \
+git clone https://github.com/yuvraj108c/ComfyUI_InvSR && \
+cd ComfyUI_InvSR && \
 pip3 install -r requirements.txt
 
 # Comfyui_segformer_b2_clothes

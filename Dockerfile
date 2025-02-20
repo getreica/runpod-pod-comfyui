@@ -45,7 +45,7 @@ COPY --chmod=755 start-original.sh /start-original.sh
 COPY --chmod=755 1-check-variables.sh /1-check-variables.sh
 COPY --chmod=755 2-comfyui-on-workspace.sh /2-comfyui-on-workspace.sh
 COPY --chmod=755 3-ai-toolkit-on-workspace.sh /3-ai-toolkit-on-workspace.sh
-COPY --chown=755 download-custom-nodes.sh /download-custom-nodes.sh
+COPY --chown=755 4-download-custom-nodes.sh /4-download-custom-nodes.sh
 
 # Setup script of ComfyUI settings
 COPY --chmod=644 comfy.settings.json /comfy.settings.json
