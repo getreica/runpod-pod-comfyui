@@ -1,4 +1,4 @@
-https://github.com/XLabs-AI/x-flux-comfyui.git
+https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 https://github.com/kijai/ComfyUI-SUPIR.git
 https://github.com/kijai/ComfyUI-KJNodes.git
 https://github.com/rgthree/rgthree-comfy.git

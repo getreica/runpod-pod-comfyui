@@ -11,8 +11,10 @@ echo "------- Linking /workspace/comfyui/models folder into Comfyui -------"
 rm -rf /comfyui/models
 ln -s /workspace/models /comfyui/
 
-echo "------- Installing custom scripts -------"
-comfy node install https://github.com/pythongosssss/ComfyUI-Custom-Scripts
+# Copy the bodytypes folder into input folder
+echo "------- Linking /workspace/bodytypes into Comfyui input folder -------"
+mkdir -p /comfyui/input/bodytypes
+cp -r /workspace/bodytypes /comfyui/input/bodytypes
 
 # Start download nodes in /workspace/custom_nodes 
 # Download all custom nodes in /workspace/custom_nodes
