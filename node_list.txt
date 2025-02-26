@@ -71,3 +71,4 @@ https://github.com/Smirnov75/ComfyUI-mxToolkit
 https://github.com/Acly/comfyui-tooling-nodes
 https://github.com/lldacing/ComfyUI_Patches_ll
 https://github.com/yuvraj108c/ComfyUI_InvSR
+https://github.com/liusida/ComfyUI-AutoCropFaces
