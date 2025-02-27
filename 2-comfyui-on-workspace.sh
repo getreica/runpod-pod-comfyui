@@ -14,7 +14,7 @@ ln -s /workspace/models /comfyui/
 # Copy the bodytypes folder into input folder
 echo "------- Linking /workspace/bodytypes into Comfyui input folder -------"
 mkdir -p /comfyui/input/bodytypes
-cp -r /workspace/bodytypes /comfyui/input/bodytypes
+cp -r /workspace/bodytypes /comfyui/input/
 
 # Start download nodes in /workspace/custom_nodes 
 # Download all custom nodes in /workspace/custom_nodes
