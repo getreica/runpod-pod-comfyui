@@ -18,16 +18,6 @@ RUN apt-get update && apt-get install -y \
 # Clean up to reduce image size
 RUN apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-# Install comfy-cli
-RUN pip install comfy-cli
-
-# Install ComfyUI
-RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.1 --nvidia --version 0.3.19
-
-FROM base AS comfyui
-
-WORKDIR /
-
 # Install pget https://github.com/replicate/pget
 RUN curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/latest/download/pget_$(uname -s)_$(uname -m)" && \ 
     chmod +x /usr/local/bin/pget
@@ -37,6 +27,52 @@ COPY default /etc/nginx/sites-available/default
 
 # Shell path for CUDA
 ENV PATH="/usr/local/cuda/bin:${PATH}"
+
+#
+#   ComfyUI
+#
+FROM base AS comfyui
+
+# Install comfy-cli
+RUN pip install comfy-cli
+
+# Install ComfyUI
+RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.1 --nvidia --version 0.3.19
+
+EXPOSE 8188
+
+#
+# AI Toolkit
+#
+FROM comfyui AS ai-toolkit
+
+WORKDIR /
+
+# Add Jupyter Notebook
+RUN pip3 install jupyterlab
+EXPOSE 8888
+
+# copy default train_lora.yaml file
+COPY --chmod=644 ai-toolkit/train_lora.yaml /ai-toolkit/config/train_lora.yaml
+COPY --chmod=755 ai-toolkit/caption_images.py /caption_images.py
+EXPOSE 7860
+
+#
+#   Workspace
+#
+FROM ai-toolkit AS pipinstall 
+
+# Install PIP modules for custom nodes 
+# Layerstyle 
+RUN pip3 install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers insightface huggingface_hub[cli,torch] tf-keras==2.17.0
+
+#
+#  Final
+#
+
+FROM pipinstall AS final
+
+WORKDIR /
 
 # Script for run ComfyUI in Listen 
 COPY --chmod=755 start-ssh-only.sh /start.sh
@@ -55,25 +91,6 @@ COPY --chmod=644 comfy.settings.json /comfy.settings.json
 # 
 COPY --chmod=644 defaultGraph.json /defaultGraph.json
 COPY --chmod=755 replaceDefaultGraph.py /replaceDefaultGraph.py
-
-EXPOSE 8188
-
-FROM comfyui AS ai-toolkit
-
-WORKDIR /
-
-# Install PIP modules for custom nodes 
-# Layerstyle 
-RUN pip3 install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers insightface huggingface_hub[cli,torch] tf-keras==2.17.0
-
-# Add Jupyter Notebook
-RUN pip3 install jupyterlab
-EXPOSE 8888
-
-# copy default train_lora.yaml file
-COPY --chmod=644 ai-toolkit/train_lora.yaml /ai-toolkit/config/train_lora.yaml
-COPY --chmod=755 ai-toolkit/caption_images.py /caption_images.py
-EXPOSE 7860
 
 # Add node list
 COPY --chmod=755 node_list.txt /node_list.txt
