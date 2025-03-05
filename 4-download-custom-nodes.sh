@@ -28,7 +28,7 @@ while IFS= read -r GITHUB_URL; do
         fi
         
         # Clona il repository del nodo (supponendo che sia su GitHub)
-        git clone $GITHUB_URL
+        git clone $GITHUB_URL --recursive
         
         # Verifica se il file requirements.txt esiste e installa le dipendenze
         if [[ -f "$DOWNLOAD_DIR/$NODE_NAME/requirements.txt" ]]; then
