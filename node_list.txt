@@ -42,7 +42,6 @@ https://github.com/CY-CHENYUE/ComfyUI-Redux-Prompt
 https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
 https://github.com/cubiq/ComfyUI_InstantID
 https://github.com/chflame163/ComfyUI_LayerStyle_Advance
-https://github.com/cozymantis/human-parser-comfyui-node
 https://github.com/chflame163/ComfyUI_CatVTON_Wrapper
 https://github.com/Lightricks/ComfyUI-LTXVideo
 https://github.com/chflame163/ComfyUI_LayerStyle.git
@@ -74,3 +73,5 @@ https://github.com/yuvraj108c/ComfyUI_InvSR
 https://github.com/liusida/ComfyUI-AutoCropFaces
 https://github.com/GraftingRayman/ComfyUI-PuLID-Flux-GR
 https://github.com/kijai/ComfyUI-WanVideoWrapper
+https://github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92
+https://github.com/1038lab/ComfyUI-RMBG
