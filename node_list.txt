@@ -75,3 +75,4 @@ https://github.com/GraftingRayman/ComfyUI-PuLID-Flux-GR
 https://github.com/kijai/ComfyUI-WanVideoWrapper
 https://github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92
 https://github.com/1038lab/ComfyUI-RMBG
+https://github.com/SeaArtLab/ComfyUI-Long-CLIP
