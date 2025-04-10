@@ -60,7 +60,6 @@ https://github.com/kijai/ComfyUI-DepthAnythingV2
 https://github.com/StartHua/Comfyui_segformer_b2_clothes
 https://github.com/EvilBT/ComfyUI_SLK_joy_caption_two
 https://github.com/Shakker-Labs/ComfyUI-IPAdapter-Flux
-https://github.com/rdancer/ComfyUI_Florence2SAM2
 https://github.com/CY-CHENYUE/ComfyUI-InpaintEasy
 https://github.com/Gourieff/ComfyUI-ReActor
 https://github.com/city96/ComfyUI_ExtraModels
@@ -76,4 +75,5 @@ https://github.com/kijai/ComfyUI-WanVideoWrapper
 https://github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92
 https://github.com/1038lab/ComfyUI-RMBG
 https://github.com/SeaArtLab/ComfyUI-Long-CLIP
-https://github.com/WeichenFan/CFG-Zero-star
+https://github.com/M1kep/ComfyLiterals
+

@@ -1,7 +1,6 @@
-ARG CUDA_VERSION="12.1.1"
-ARG CUDNN_VERSION="8"
+ARG CUDA_VERSION="12.8.1"
 ARG UBUNTU_VERSION="22.04"
-ARG DOCKER_FROM=nvidia/cuda:$CUDA_VERSION-cudnn$CUDNN_VERSION-devel-ubuntu$UBUNTU_VERSION
+ARG DOCKER_FROM=nvidia/cuda:$CUDA_VERSION-cudnn-devel-ubuntu$UBUNTU_VERSION
 
 # Base NVidia CUDA Ubuntu image
 FROM $DOCKER_FROM AS base
@@ -37,7 +36,7 @@ FROM base AS comfyui
 RUN pip install comfy-cli
 
 # Install ComfyUI
-RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.1 --nvidia --version 0.3.26
+RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.1 --nvidia --version 0.3.27
 
 EXPOSE 8188
 
