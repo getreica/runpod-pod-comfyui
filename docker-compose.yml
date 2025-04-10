@@ -1,0 +1,18 @@
+services:
+  pod:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - "8188:8189"
+      - "8000:8001"
+    volumes:
+      - output:/comfyui/output
+      #- /Volumes/HD 2TB/2 - REICA/models:/comfyui/models/
+    environment:
+      - SERVE_API_LOCALLY=true
+    platform: linux/amd64
+volumes:
+  output:
