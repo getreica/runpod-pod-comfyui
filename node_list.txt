@@ -76,4 +76,5 @@ https://github.com/omar92/ComfyUI-QualityOfLifeSuit_Omar92
 https://github.com/1038lab/ComfyUI-RMBG
 https://github.com/SeaArtLab/ComfyUI-Long-CLIP
 https://github.com/M1kep/ComfyLiterals
+https://github.com/bvhari/ComfyUI_SUNoise
 
