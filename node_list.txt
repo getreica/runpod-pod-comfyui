@@ -45,7 +45,6 @@ https://github.com/chflame163/ComfyUI_LayerStyle_Advance
 https://github.com/chflame163/ComfyUI_CatVTON_Wrapper
 https://github.com/Lightricks/ComfyUI-LTXVideo
 https://github.com/chflame163/ComfyUI_LayerStyle.git
-https://github.com/Seedsa/Fooocus_Nodes.git
 https://github.com/Acly/comfyui-inpaint-nodes.git
 https://github.com/logtd/ComfyUI-Fluxtapoz.git
 https://github.com/spacepxl/ComfyUI-Image-Filters.git
