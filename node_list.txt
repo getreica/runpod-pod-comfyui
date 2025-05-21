@@ -1,3 +1,4 @@
+https://github.com/ali-vilab/ACE_plus
 https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 https://github.com/kijai/ComfyUI-SUPIR.git
 https://github.com/kijai/ComfyUI-KJNodes.git
@@ -76,4 +77,4 @@ https://github.com/1038lab/ComfyUI-RMBG
 https://github.com/SeaArtLab/ComfyUI-Long-CLIP
 https://github.com/M1kep/ComfyLiterals
 https://github.com/bvhari/ComfyUI_SUNoise
-
+https://github.com/1038lab/ComfyUI-ReduxFineTune
