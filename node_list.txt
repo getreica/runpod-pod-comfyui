@@ -79,6 +79,5 @@ https://github.com/M1kep/ComfyLiterals
 https://github.com/bvhari/ComfyUI_SUNoise
 https://github.com/1038lab/ComfyUI-ReduxFineTune
 https://github.com/philipy1219/ComfyUI-TaylorSeer
-https://github.com/Yuan-ManX/ComfyUI-MoviiGen
 https://github.com/Reithan/negative_rejection_steering
 https://github.com/StartHua/Comfyui_leffa
