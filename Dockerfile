@@ -36,7 +36,7 @@ FROM base AS comfyui
 RUN pip install comfy-cli
 
 # Install ComfyUI
-RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.1 --nvidia --version 0.3.35
+RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.1 --nvidia --version 0.3.36
 
 EXPOSE 8188
 
@@ -63,7 +63,7 @@ FROM ai-toolkit AS pipinstall
 
 # Install PIP modules for custom nodes 
 # Layerstyle 
-RUN pip3 install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers insightface huggingface_hub[cli,torch] tf-keras==2.17.0 nunchaku
+RUN pip3 install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers insightface huggingface_hub[cli,torch] tf-keras==2.17.0 nunchaku sageattention scepter
 
 #
 #  Final
