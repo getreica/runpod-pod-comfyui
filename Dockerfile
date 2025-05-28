@@ -63,7 +63,7 @@ FROM ai-toolkit AS pipinstall
 
 # Install PIP modules for custom nodes 
 # Layerstyle 
-RUN pip3 install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers insightface huggingface_hub[cli,torch] tf-keras==2.17.0 nunchaku sageattention scepter
+RUN pip3 install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers insightface huggingface_hub[cli,torch] tf-keras==2.17.0 nunchaku sageattention
 
 #
 #  Final
