@@ -81,3 +81,5 @@ https://github.com/1038lab/ComfyUI-ReduxFineTune
 https://github.com/philipy1219/ComfyUI-TaylorSeer
 https://github.com/Reithan/negative_rejection_steering
 https://github.com/StartHua/Comfyui_leffa
+https://github.com/alexgenovese/ComfyUI-Reica
+https://github.com/lgldlk/ComfyUI-FitDit
