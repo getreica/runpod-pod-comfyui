@@ -36,7 +36,7 @@ FROM base AS comfyui
 RUN pip install comfy-cli
 
 # Install ComfyUI
-RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.1 --nvidia --version 0.3.41
+RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.8 --nvidia --version 0.3.41
 
 EXPOSE 8188
 
@@ -63,7 +63,11 @@ FROM ai-toolkit AS pipinstall
 
 # Install PIP modules for custom nodes 
 # Layerstyle 
-RUN pip3 install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers insightface huggingface_hub[cli,torch] tf-keras==2.17.0 sageattention color-matcher scepter
+RUN pip3 install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers insightface huggingface_hub[cli,torch] tf-keras==2.17.0 sageattention color-matcher scepter flash-attn
+
+# RTX 5090
+RUN python3 -s -m pip install --pre --upgrade --no-cache-dir torch --extra-index-url https://download.pytorch.org/whl/nightly/cu128
+RUN python3 -s -m pip install --pre --upgrade --no-cache-dir torchvision --extra-index-url https://download.pytorch.org/whl/nightly/cu128
 
 #
 #  Final
