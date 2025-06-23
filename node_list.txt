@@ -1,4 +1,3 @@
-https://github.com/ali-vilab/ACE_plus
 https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 https://github.com/kijai/ComfyUI-SUPIR.git
 https://github.com/kijai/ComfyUI-KJNodes.git
@@ -21,14 +20,10 @@ https://github.com/city96/ComfyUI-GGUF
 https://github.com/sipie800/ComfyUI-PuLID-Flux-Enhanced
 https://github.com/kaibioinfo/ComfyUI_AdvancedRefluxControl
 https://github.com/yichengup/Comfyui_Flux_Style_Adjust
-https://github.com/TTPlanetPig/Comfyui_TTP_Toolset
-https://github.com/evanspearman/ComfyMath
 https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait
-https://github.com/MoonHugo/ComfyUI-BiRefNet-Hugo
 https://github.com/neverbiasu/ComfyUI-SAM2
 https://github.com/mirabarukaso/ComfyUI_Mira
 https://github.com/lrzjason/Comfyui-In-Context-Lora-Utils
-https://github.com/TTPlanetPig/Comfyui_JC2
 https://github.com/TTPlanetPig/Comfyui_Object_Migration
 https://github.com/farizrifqi/ComfyUI-Image-Saver
 https://github.com/sipherxyz/comfyui-art-venture
@@ -38,7 +33,6 @@ https://github.com/jamesWalker55/comfyui-various
 https://github.com/kijai/ComfyUI-HunyuanVideoWrapper
 https://github.com/CY-CHENYUE/ComfyUI-Redux-Prompt
 https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
-https://github.com/cubiq/ComfyUI_InstantID
 https://github.com/chflame163/ComfyUI_LayerStyle_Advance
 https://github.com/Lightricks/ComfyUI-LTXVideo
 https://github.com/chflame163/ComfyUI_LayerStyle.git
@@ -74,8 +68,10 @@ https://github.com/bvhari/ComfyUI_SUNoise
 https://github.com/1038lab/ComfyUI-ReduxFineTune
 https://github.com/philipy1219/ComfyUI-TaylorSeer
 https://github.com/Reithan/negative_rejection_steering
-https://github.com/StartHua/Comfyui_leffa
-https://github.com/alexgenovese/ComfyUI-Reica
 https://github.com/lgldlk/ComfyUI-FitDit
-https://github.com/gelasdev/ComfyUI-FLUX-BFL-API/
 https://github.com/judian17/ComfyUI-Extract_Flux_Lora
+https://github.com/shiimizu/ComfyUI-TiledDiffusion
+https://github.com/gseth/ControlAltAI-Nodes
+https://github.com/kijai/ComfyUI-LBMWrapper
+https://github.com/ali-vilab/ACE_plus
+https://github.com/alexgenovese/ComfyUI-Reica
