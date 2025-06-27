@@ -73,7 +73,7 @@ https://github.com/judian17/ComfyUI-Extract_Flux_Lora
 https://github.com/shiimizu/ComfyUI-TiledDiffusion
 https://github.com/gseth/ControlAltAI-Nodes
 https://github.com/kijai/ComfyUI-LBMWrapper
-https://github.com/ali-vilab/ACE_plus
 https://github.com/Extraltodeus/sigmas_tools_and_the_golden_scheduler
 https://github.com/ClownsharkBatwing/RES4LYF
+https://github.com/Zehong-Ma/ComfyUI-MagCache
 https://github.com/alexgenovese/ComfyUI-Reica
