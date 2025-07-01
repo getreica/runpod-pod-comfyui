@@ -76,4 +76,5 @@ https://github.com/kijai/ComfyUI-LBMWrapper
 https://github.com/Extraltodeus/sigmas_tools_and_the_golden_scheduler
 https://github.com/ClownsharkBatwing/RES4LYF
 https://github.com/Zehong-Ma/ComfyUI-MagCache
+https://github.com/TTPlanetPig/Comfyui_TTP_Toolset
 https://github.com/alexgenovese/ComfyUI-Reica
