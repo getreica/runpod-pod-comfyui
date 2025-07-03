@@ -78,4 +78,5 @@ https://github.com/ClownsharkBatwing/RES4LYF
 https://github.com/Zehong-Ma/ComfyUI-MagCache
 https://github.com/TTPlanetPig/Comfyui_TTP_Toolset
 https://github.com/ChenDarYen/ComfyUI-NAG
+https://github.com/lquesada/ComfyUI-Inpaint-CropAndStitch
 https://github.com/alexgenovese/ComfyUI-Reica
