@@ -16,15 +16,15 @@ if [[ ! -d /workspace/ai-toolkit ]]; then
 	ln -s /workspace/ai-toolkit /ai-toolkit
 
 	# Ensure we have /workspace/training_sets in all scenarios
-	mkdir -p /workspace/training_set
-	mkdir -p /workspace/LoRas
-	mkdir -p /workspace/models/loras/flux_train_ui
+	mkdir -p /workspace/ai-toolkit/training_set
+	mkdir -p /workspace/ai-toolkit/LoRas
+	mkdir -p /workspace/models/loras/ai_toolkit_train
 
 	# when trained using the UI, the result is stored in /workspace/ai-toolkit/output
-	ln -s /workspace/ai-toolkit/output /workspace/models/loras/flux_train_ui
+	ln -s /workspace/ai-toolkit/output /workspace/models/loras/ai_toolkit_train
 
 	# when trained using the CLI, the result set is stored in /workspace/LoRas (don't put it in /workspace/ai-toolkit/output because it will create a symlink loop)
-	ln -s /workspace/LoRas /workspace/models/loras/ai-toolkit
+	ln -s /workspace/ai-toolkit/LoRas /workspace/models/loras/ai-toolkit
 
 else
 	# otherwise – do nothing

@@ -36,12 +36,12 @@ FROM base AS comfyui
 RUN pip install comfy-cli
 
 # Install ComfyUI
-RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.1 --nvidia --version 0.3.43
+RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.1 --nvidia --version 0.3.44
 
 EXPOSE 8188
 
 #
-# AI Toolkit
+# AI Toolkit + Jupiter
 #
 FROM comfyui AS ai-toolkit
 
@@ -53,7 +53,8 @@ EXPOSE 8888
 
 # copy default train_lora.yaml file
 COPY --chmod=644 ai-toolkit/train_lora.yaml /ai-toolkit/config/train_lora.yaml
-COPY --chmod=755 ai-toolkit/caption_images.py /caption_images.py
+# TODO update caption_images.py to a more advanced LLM
+COPY --chmod=755 ai-toolkit/caption_images.py /caption_images.py 
 EXPOSE 7860
 
 #
@@ -76,6 +77,7 @@ WORKDIR /
 # Script for run ComfyUI in Listen 
 COPY --chmod=755 start-ssh-only.sh /start.sh
 COPY --chmod=755 start-original.sh /start-original.sh
+
 # Setup environment ComfyUI and Ai Toolkit 
 COPY --chmod=755 1-check-variables.sh /1-check-variables.sh
 COPY --chmod=755 2-comfyui-on-workspace.sh /2-comfyui-on-workspace.sh
