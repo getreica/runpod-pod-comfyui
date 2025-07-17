@@ -33,7 +33,7 @@ while IFS= read -r GITHUB_URL; do
         # Verifica se il file requirements.txt esiste e installa le dipendenze
         if [[ -f "$DOWNLOAD_DIR/$NODE_NAME/requirements.txt" ]]; then
             echo "Installazione delle dipendenze per $NODE_NAME"
-            pip3 install -r "$DOWNLOAD_DIR/$NODE_NAME/requirements.txt"
+            python3 -m pip3 install -r "$DOWNLOAD_DIR/$NODE_NAME/requirements.txt"
         else
             echo "File requirements.txt non trovato per $NODE_NAME, saltato."
         fi
