@@ -84,3 +84,4 @@ https://github.com/safzanpirani/flux-kontext-diff-merge
 https://github.com/PrunaAI/ComfyUI_pruna
 https://github.com/bbaudio-2025/ComfyUI-SuperUltimateVaceTools
 https://github.com/Bwebbfx/ComfyUI_FaceParsing
+https://github.com/lum3on/ComfyUI-FrameUtilitys
