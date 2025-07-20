@@ -55,7 +55,7 @@ EXPOSE 8888
 COPY --chmod=644 ai-toolkit/train_lora.yaml /ai-toolkit/config/train_lora.yaml
 # TODO update caption_images.py to a more advanced LLM
 COPY --chmod=755 ai-toolkit/caption_images.py /caption_images.py 
-EXPOSE 7860
+EXPOSE 8675
 
 #
 #   Workspace
