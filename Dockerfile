@@ -28,6 +28,20 @@ COPY default /etc/nginx/sites-available/default
 ENV PATH="/usr/local/cuda/bin:${PATH}"
 
 #
+#   Setup Python environment for RTX 5090
+# 
+FROM base AS python-env
+
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+RUN . /opt/venv/bin/activate
+
+RUN pip install --upgrade pip
+RUN pip install --pre torch torchvision torchaudio \
+    --index-url https://download.pytorch.org/whl/nightly/cu128
+
+
+#
 #   ComfyUI
 #
 FROM base AS comfyui
@@ -36,12 +50,12 @@ FROM base AS comfyui
 RUN pip install comfy-cli
 
 # Install ComfyUI
-RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.6 --nvidia --version 0.3.43
+RUN /usr/bin/yes | comfy --workspace /comfyui install --cuda-version 12.6 --nvidia --version 0.3.44
 
 EXPOSE 8188
 
 #
-# AI Toolkit
+# JupiterLab + AI Toolkit
 #
 FROM comfyui AS ai-toolkit
 
@@ -61,9 +75,7 @@ EXPOSE 7860
 #
 FROM ai-toolkit AS pipinstall 
 
-# Install PIP modules for custom nodes 
-# Layerstyle 
-RUN pip3 install inference-cli==0.17.0 facexlib colorama gguf blend-modes xformers insightface huggingface_hub[cli,torch] tf-keras==2.17.0 sageattention color-matcher
+
 
 #
 #  Final
@@ -81,23 +93,10 @@ COPY --chmod=755 1-check-variables.sh /1-check-variables.sh
 COPY --chmod=755 2-comfyui-on-workspace.sh /2-comfyui-on-workspace.sh
 COPY --chmod=755 3-ai-toolkit-on-workspace.sh /3-ai-toolkit-on-workspace.sh
 COPY --chown=755 4-download-custom-nodes.sh /4-download-custom-nodes.sh
-
-FROM nodeinstall AS cudartx
-
-# RTX 5090
-RUN pip install setuptools --upgrade
-RUN pip install ninja cmake packaging
-RUN pip uninstall -y torch torchvision torchaudio xformers || true
-RUN rm -rf ~/.cache/torch_extensions
-RUN pip3 install --force-reinstall torch==2.7.1+cu128 torchvision==0.22.1+cu128 --extra-index-url https://download.pytorch.org/whl/cu128 
-RUN export TORCH_CUDA_ARCH_LIST="9.0"
-
-
-FROM cudartx AS final
-
 # Setup script of ComfyUI settings
 COPY --chmod=644 comfy.settings.json /comfy.settings.json
 
+FROM pipinstall AS final
 
 # Add node list
 COPY --chmod=755 node_list.txt /node_list.txt
