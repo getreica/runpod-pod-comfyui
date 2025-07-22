@@ -48,5 +48,7 @@ if [[ ! -d /workspace/ai-toolkit ]]; then
 else
 	# otherwise – do nothing
 	echo "----- No Installation required. Ai Toolkit is on /workspace/ai-toolkit ------"
-	# rm -rf /ai-toolkit
+	ln -s /workspace/ai-toolkit /ai-toolkit
+	cd /ai-toolkit/ui
+	npm run build_and_start
 fi
