@@ -7,8 +7,8 @@ FROM $DOCKER_FROM AS base
 
 # Install Python, git and other necessary tools
 RUN apt-get update && apt-get install -y \
-    python3.11 -y \
-    python3-pip \
+    python3.11 \
+    python3-pip -y \
     && apt-get install -y --no-install-recommends git git-lfs wget curl zip unzip aria2 ffmpeg libxext6 libxrender1 \
     && apt-get install -y libgl1-mesa-glx libglib2.0-0 git wget libgl1 \
     && ln -sf /usr/bin/python3.11 /usr/bin/python \
@@ -73,15 +73,7 @@ EXPOSE 8675
 #
 #   Workspace
 #
-FROM ai-toolkit AS pipinstall 
-
-
-
-#
-#  Final
-#
-
-FROM pipinstall AS nodeinstall
+FROM ai-toolkit AS final
 
 WORKDIR /
 
@@ -92,12 +84,10 @@ COPY --chmod=755 start-original.sh /start-original.sh
 COPY --chmod=755 1-check-variables.sh /1-check-variables.sh
 COPY --chmod=755 2-comfyui-on-workspace.sh /2-comfyui-on-workspace.sh
 COPY --chmod=755 3-ai-toolkit-on-workspace.sh /3-ai-toolkit-on-workspace.sh
-COPY --chown=755 4-download-custom-nodes.sh /4-download-custom-nodes.sh
+COPY --chmod=755 4-download-custom-nodes.sh /4-download-custom-nodes.sh
 
 # Setup script of ComfyUI settings
 COPY --chmod=644 comfy.settings.json /comfyui/comfy.settings.json
-
-FROM pipinstall AS final
 
 # Add node list
 COPY --chmod=755 node_list.txt /node_list.txt

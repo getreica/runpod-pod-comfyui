@@ -1,43 +1,63 @@
 #!/bin/bash
+set -euo pipefail
 
 # Some custom nodes need this env variable
 COMFYUI_PATH=/comfyui
 
-# File contenente l'elenco dei nodi da scaricare
+# File containing the list of nodes to download
 NODES_FILE="/node_list.txt"
 
-# Cartella in cui verranno scaricati i nodi
+# Validate nodes file exists
+if [[ ! -f "$NODES_FILE" ]]; then
+    echo "Error: Node list file $NODES_FILE not found" >&2
+    exit 1
+fi
+
+# Directory where nodes will be downloaded
 DOWNLOAD_DIR="$COMFYUI_PATH/custom_nodes"
-echo "I nodi verranno scaricati qui $DOWNLOAD_DIR"
+echo "Nodes will be downloaded to $DOWNLOAD_DIR"
 
-# Entro nella cartella di download
-cd "$DOWNLOAD_DIR"
+# Create download directory if it doesn't exist
+mkdir -p "$DOWNLOAD_DIR" || {
+    echo "Error: Failed to create directory $DOWNLOAD_DIR" >&2
+    exit 1
+}
 
-# Legge ogni nodo dal file di testo
-while IFS= read -r GITHUB_URL; do
-    if [[ -n "$GITHUB_URL" ]]; then
-        # prendi l'ultima parte del nome del nodo (dopo l'ultimo /)
-        NODE_NAME=$(basename $GITHUB_URL)
-        
-        echo "Scaricamento del nodo: $GITHUB_URL"
-        
-        # Verifica se il nodo esiste già
-        if [[ -d "$DOWNLOAD_DIR/$NODE_NAME" ]]; then
-            echo "Il nodo $NODE_NAME esiste già, saltato."
-            continue
+cd "$DOWNLOAD_DIR" || {
+    echo "Error: Failed to enter directory $DOWNLOAD_DIR" >&2
+    exit 1
+}
+
+# Read each node from the text file
+while IFS= read -r GITHUB_URL || [[ -n "$GITHUB_URL" ]]; do
+    GITHUB_URL=$(echo "$GITHUB_URL" | xargs)  # Trim whitespace
+    if [[ -z "$GITHUB_URL" || "$GITHUB_URL" == \#* ]]; then
+        continue  # Skip empty lines and comments
+    fi
+
+    NODE_NAME=$(basename "$GITHUB_URL")
+    
+    echo "Downloading node: $GITHUB_URL"
+    
+    if [[ -d "$DOWNLOAD_DIR/$NODE_NAME" ]]; then
+        echo "Node $NODE_NAME already exists, skipping."
+        continue
+    fi
+    
+    if ! git clone "$GITHUB_URL" --recursive; then
+        echo "Error: Failed to clone $GITHUB_URL" >&2
+        continue
+    fi
+    
+    if [[ -f "$DOWNLOAD_DIR/$NODE_NAME/requirements.txt" ]]; then
+        echo "Installing dependencies for $NODE_NAME"
+        if ! pip3 install -r "$DOWNLOAD_DIR/$NODE_NAME/requirements.txt"; then
+            echo "Warning: Failed to install dependencies for $NODE_NAME" >&2
         fi
-        
-        # Clona il repository del nodo (supponendo che sia su GitHub)
-        git clone $GITHUB_URL --recursive
-        
-        # Verifica se il file requirements.txt esiste e installa le dipendenze
-        if [[ -f "$DOWNLOAD_DIR/$NODE_NAME/requirements.txt" ]]; then
-            echo "Installazione delle dipendenze per $NODE_NAME"
-            pip3 install -r "$DOWNLOAD_DIR/$NODE_NAME/requirements.txt"
-        else
-            echo "File requirements.txt non trovato per $NODE_NAME, saltato."
-        fi
+    else
+        echo "requirements.txt not found for $NODE_NAME, skipping."
     fi
 done < "$NODES_FILE"
 
-echo "Processo completato."
+echo "Process completed successfully."
+exit 0
