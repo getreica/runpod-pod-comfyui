@@ -1,5 +1,4 @@
 https://github.com/pythongosssss/ComfyUI-Custom-Scripts
-https://github.com/kijai/ComfyUI-SUPIR.git
 https://github.com/kijai/ComfyUI-KJNodes.git
 https://github.com/rgthree/rgthree-comfy.git
 https://github.com/JPS-GER/ComfyUI_JPS-Nodes.git
@@ -39,16 +38,13 @@ https://github.com/chflame163/ComfyUI_LayerStyle.git
 https://github.com/Acly/comfyui-inpaint-nodes.git
 https://github.com/logtd/ComfyUI-Fluxtapoz.git
 https://github.com/spacepxl/ComfyUI-Image-Filters.git
-https://github.com/envy-ai/ComfyUI-ConDelta
 https://github.com/yorkane/ComfyUI-KYNode
 https://github.com/jags111/efficiency-nodes-comfyui
 https://github.com/facok/ComfyUI-TeaCacheHunyuanVideo
-https://github.com/chengzeyi/Comfy-WaveSpeed
 https://github.com/storyicon/comfyui_segment_anything
 https://github.com/kijai/ComfyUI-DepthAnythingV2
 https://github.com/StartHua/Comfyui_segformer_b2_clothes
 https://github.com/EvilBT/ComfyUI_SLK_joy_caption_two
-https://github.com/Shakker-Labs/ComfyUI-IPAdapter-Flux
 https://github.com/CY-CHENYUE/ComfyUI-InpaintEasy
 https://github.com/Gourieff/ComfyUI-ReActor
 https://github.com/asagi4/ComfyUI-Adaptive-Guidance
