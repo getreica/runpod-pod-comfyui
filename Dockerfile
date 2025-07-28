@@ -69,7 +69,7 @@ FROM pytorch AS comfyui
 # Install comfy-cli and ComfyUI with cache mount
 RUN --mount=type=cache,target=/root/.cache/pip \
     /opt/venv/bin/pip install comfy-cli && \
-    /usr/bin/yes | /opt/venv/bin/comfy --workspace /comfyui install --cuda-version 12.6 --nvidia --version 0.3.45
+    /usr/bin/yes | /opt/venv/bin/comfy --workspace /comfyui install --cuda-version 12.6 --nvidia --version 0.3.46
 
 EXPOSE 8188
 
